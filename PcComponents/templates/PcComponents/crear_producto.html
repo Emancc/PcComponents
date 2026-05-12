@@ -1,0 +1,10 @@
+{%extends 'PcComponents/base.html'%}
+
+{% block body %}
+<h1 class="titulo">Carga de Producto</h1>
+<form method="post" class="formulario">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Cargar</button>
+</form>
+{%endblock%}

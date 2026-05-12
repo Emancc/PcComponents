@@ -1,0 +1,154 @@
+nav{
+    background: #0d5775;
+    color: aliceblue;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 10px;
+}
+
+nav h3{
+    margin-left: 20px;
+     
+}
+
+nav div a{
+    text-decoration: none;
+    color: white;
+    padding: 5px;
+    font-weight: bold;
+}
+
+a:hover{
+    background-color: red;
+    color: black;
+    border-radius: 20px;
+}
+
+a:focus{
+        background-color: rgb(9, 184, 15);
+    color: black;
+    border-radius: 20px;
+}
+
+.mensaje{
+    color: rgb(41, 12, 67);
+    background-color: #ababab;
+    display: inline-block;
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.comentario{
+    background-color: #84a1ad;
+    border-radius:40px ;
+    padding: 10px;
+    display: inline-block;
+    color: azure;
+    text-decoration: none;
+}
+
+.comentario:hover{
+    background-color: #467d94;
+}
+a{
+    text-decoration: none;
+}
+.editar {
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 2px;
+  display: inline-block;
+  background-color: rgb(39, 113, 186);
+  color: white;
+}
+
+.editar:hover {
+  background-color: rgb(168, 173, 237);
+  color: black;
+}
+
+
+.eliminar {
+  border: solid 1px black;
+  border-radius: 10px;
+  padding: 6px;
+  margin: 2px;
+  display: inline-block;
+  background-color: rgb(173, 11, 11);
+  color: white;
+}
+
+.eliminar:hover {
+  background-color: rgb(248, 168, 168);
+  color: black;
+}
+
+.formulario {
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 15px;
+}
+
+.formulario p {
+    margin-bottom: 20px;
+}
+
+.formulario label {
+    display: block;
+    margin-bottom: 8px;
+    color: #444;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.formulario input, 
+.formulario textarea, 
+.formulario select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #fcfcfc;
+}
+
+.formulario button {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+.boton {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    display: block;
+}
+.boton:hover{
+    background: linear-gradient(135deg, #0056b3, #004085);
+}
+
+.formulario button:hover{
+    background: linear-gradient(135deg, #0056b3, #004085);
+}
+
+.formulario button:active{
+    transform: scale(0.98);
+}
+

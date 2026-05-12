@@ -1,0 +1,26 @@
+{%load static%}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="{% static 'PcComponents/styles.css' %}" />
+  <title>PcComponents</title>
+</head>
+
+<body>
+  <nav>
+    <h3>PcComponents</h3>
+    <div>
+      <a href="{% url 'index' %}">Inicio</a>
+      <a href="{% url 'productos' %}">Productos</a>
+      <a href="{% url 'about' %}">About</a>
+      <a href="{% url 'admin:index' %}">Admin</a>
+    </div>
+  </nav>
+  {% block body %} {% endblock %}
+</body>
+
+</html>

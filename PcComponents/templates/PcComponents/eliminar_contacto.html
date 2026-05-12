@@ -1,0 +1,18 @@
+{% extends 'PcComponents/base.html' %}
+<!-- url/tareas-->
+{% block body %}
+<h1 class="titulo">Eliminar Mensaje</h1>
+<form method="post" class="formulario">
+    {%csrf_token%}
+    <div>
+        <h2>¿Estas seguro de eliminar el mensaje?</h2>
+    </div>
+    <h3>
+
+        {{ contacto }}
+    </h3>
+
+    <button type="submit">Si, eliminar</button>
+    <a class="boton" href="{%url 'productos'%}">No, volver</button>
+</form>
+{% endblock %}
