@@ -6,6 +6,9 @@
 <ul>
   {% for producto in productos %}
   <li>
+    {% if producto.imagen %}
+    <img src="{{producto.imagen.url}}" alt="imagen {{producto.nombre}}" width="200">
+    {% endif %}
     <span>Nombre:</span> {{ producto.name }} <br />
     <span>Descripcion:</span> {{ producto.description }} <br />
     <span>Stock:</span> {{ producto.stock }} <br />

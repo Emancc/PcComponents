@@ -5,6 +5,7 @@ class Productos(models.Model):
     name = models.CharField(max_length=100)
     description = models.TextField(blank=True, null=True)
     stock = models.IntegerField(default=0)
+    imagen = models.ImageField(upload_to="productos/", null=True, blank=True)
 
     def __str__(self):
         return self.name

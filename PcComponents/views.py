@@ -56,7 +56,7 @@ def eliminar_contacto(request, id):
 
 def crear_producto(request):
     if request.method == "POST":
-        form = ProductForm(request.POST)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect("productos")

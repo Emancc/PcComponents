@@ -19,6 +19,28 @@
       <a href="{% url 'about' %}">About</a>
       <a href="{% url 'admin:index' %}">Admin</a>
     </div>
+    {% if user.is_authenticated %}
+    <div class="cajota">
+      <div class="cajaperfil">
+
+        {% if user.foto_perfil %}
+        <img class="perfil" src="{{user.foto_perfil.url}}" alt="imagen {{user.nombre}}">
+        {% endif %}
+      </div>
+      <div>
+
+        <form action="{%url 'logout' %}" method="post">
+          {%csrf_token%}
+          <p>Bienvenido {{user.username}} </p>
+          <button type="submit">Cerrar sesion</button>
+        </form>
+      </div>
+    </div>
+    {%else%}
+    <div>
+      <a href="{%url 'login' %}">Login</a>
+    </div>
+    {%endif%}
   </nav>
   {% block body %} {% endblock %}
 </body>
