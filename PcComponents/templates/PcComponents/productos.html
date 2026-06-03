@@ -1,33 +1,50 @@
 {%extends 'PcComponents/base.html'%}
 {%block body%}
-<h1>Productos</h1>
-<h2>Lista de productos</h2>
-<a class="comentario" href="{% url 'crear_producto' %}">Carga tu producto</a><br>
-<ul>
-  {% for producto in productos %}
-  <li>
-    {% if producto.imagen %}
-    <img src="{{producto.imagen.url}}" alt="imagen {{producto.nombre}}" width="200">
-    {% endif %}
-    <span>Nombre:</span> {{ producto.name }} <br />
-    <span>Descripcion:</span> {{ producto.description }} <br />
-    <span>Stock:</span> {{ producto.stock }} <br />
-    <a class="comentario" href="{% url 'crear_contacto' %}">Crear Reseña</a><br>
-    {% for msj in producto.mensajes.all %}
-    <p class="mensaje">
-      "{{ msj.mensaje }}" <br />
-      <small><strong>Por:</strong> {{ msj.name }} ({{ msj.email }})</small><br>
-      <a class="editar" href="{% url 'editar_contacto' msj.id %}">Editar</a>
-      <a class="eliminar" href="{% url 'eliminar_contacto' msj.id %}">Eliminar</a>
-    </p>
-    {% empty %}
-    <p>Sin comentarios aún para este producto.</p>
-    {% endfor %}
-  </li>
-  <p>
-    -------------------------------------------------------------------------------------------------------------------
+<h1 class="titulo">Productos</h1>
+<div class="container">
+  <p>Dentro de nuestra pagina poseemos una amplia variedad de productos de alta calidad.
+    <br>Haz click abajo para cargar un
+    nuevo producto.
   </p>
-  {% endfor %}
+  <a class="comentario" href="{% url 'crear_producto' %}">Carga tu producto</a><br>
+</div>
+<ul>
+  <div class="productos">
+    {% for producto in productos %}
+    <div class="tarjeta">
+
+      {% if producto.imagen %}
+      <img src="{{producto.imagen.url}}" alt="imagen {{producto.nombre}}" width="200">
+      {% endif %}
+      <li>
+        <div class="caracteristicas">
+
+          <span>Nombre:</span> {{ producto.name }} <br />
+          <span>Descripcion:</span> {{ producto.description }} <br />
+          <span>Stock:</span> {{ producto.stock }} <br />
+        </div>
+        <a class="comentario" href="{% url 'crear_contacto' producto.id %}">Crear Reseña</a><br>
+        {% for msj in producto.mensajes.all %}
+        <div class="reseña">
+          <p class="mensaje">
+            "{{ msj.mensaje }}"
+          </p>
+          <br>
+          <small><strong>Por:</strong> {{ msj.name }} ({{ msj.email }})</small><br>
+          <div class="acciones">
+            <a class="editar" href="{% url 'editar_contacto' msj.id %}">Editar</a>
+            <a class="eliminar" href="{% url 'eliminar_contacto' msj.id %}">Eliminar</a>
+          </div>
+
+        </div>
+        {% empty %}
+        <p>Sin comentarios aún para este producto.</p>
+        {% endfor %}
+      </li>
+
+    </div>
+    {% endfor %}
+  </div>
 </ul>
 
 {% endblock %}

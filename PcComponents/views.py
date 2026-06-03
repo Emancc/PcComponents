@@ -17,15 +17,24 @@ def about(request):
     return render(request, "PcComponents/about.html")
 
 
-def crear_contacto(request):
+def crear_contacto(request, producto_id):
+    producto = get_object_or_404(Productos, id=producto_id)
+
     if request.method == "POST":
         form = ContactoForm(request.POST)
         if form.is_valid():
-            form.save()
+            reseña = form.save(commit=False)
+            reseña.productos = producto
+            reseña.save()
             return redirect("productos")
     else:
         form = ContactoForm()
-    return render(request, "PcComponents/crear_contacto.html", {"form": form})
+
+    return render(
+        request,
+        "PcComponents/crear_contacto.html",
+        {"form": form, "producto": producto},
+    )
 
 
 def editar_contacto(request, id):

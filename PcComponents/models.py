@@ -21,7 +21,7 @@ class Contacto(models.Model):
         default=None,
         null=True,
         blank=True,
-        related_name="mensaje",
+        related_name="mensajes",
     )
 
     def __str__(self):

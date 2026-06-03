@@ -38,9 +38,9 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django_browser_reload",
     "PcComponents",
     "usuarios",
-    "django_browser_reload",
 ]
 
 MIDDLEWARE = [
@@ -70,8 +70,8 @@ TEMPLATES = [
     },
 ]
 
-LOGIN_REDIRECT_URL = "login"
-LOGOUT_REDIRECT_URL = "login"
+LOGIN_REDIRECT_URL = "productos"
+LOGOUT_REDIRECT_URL = "productos"
 
 WSGI_APPLICATION = "PracticoDjango.wsgi.application"
 

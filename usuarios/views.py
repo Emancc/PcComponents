@@ -3,7 +3,6 @@ from django.contrib.auth import login
 from .forms import UsuarioPersonalizadoForm
 
 
-# creacion de registros personalizado con nuestro forms
 def registrarse(request):
     if request.method == "POST":
         form = UsuarioPersonalizadoForm(request.POST, request.FILES)

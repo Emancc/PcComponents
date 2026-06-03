@@ -5,7 +5,7 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 60px;
 }
 
 nav h3{
@@ -19,25 +19,37 @@ nav div a{
     padding: 5px;
     font-weight: bold;
 }
-
-a:hover{
-    background-color: red;
-    color: black;
-    border-radius: 20px;
+nav div a:hover{
+    color: #84a1ad;
+}
+.reseña{
+  display: flex;
+  flex-direction: column;
+    background-color: #1a1818;
+    border-radius:40px ;
+    padding: 15px;
+    color: azure;
+    margin: 10px;
+}
+.reseña:hover{
+    background-color: #0d0c0c;
 }
 
-a:focus{
-        background-color: rgb(9, 184, 15);
-    color: black;
-    border-radius: 20px;
+.acciones{
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    justify-content: space-around;
 }
-
-.mensaje{
-    color: rgb(41, 12, 67);
-    background-color: #ababab;
+.acciones a{
+    text-decoration: none;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+p.mensaje{
+    color: rgb(182, 181, 182);
     display: inline-block;
-    padding: 3px;
-    border-radius: 5px;
 }
 
 .comentario{
@@ -56,7 +68,6 @@ a{
     text-decoration: none;
 }
 .editar {
-  border: solid 1px black;
   border-radius: 10px;
   padding: 6px;
   margin: 2px;
@@ -72,7 +83,6 @@ a{
 
 
 .eliminar {
-  border: solid 1px black;
   border-radius: 10px;
   padding: 6px;
   margin: 2px;
@@ -156,7 +166,7 @@ a{
   height: 100px;
   overflow:hidden;
   border-radius:50%;
-  border:5px,solid,#ffffff;
+  border:3px,solid,#ffffff;
 }
 .perfil{
   width: 100%;
@@ -166,7 +176,79 @@ a{
 .cajota{
   margin-right: 20px;
   display: flex;
-  flex-direction: column;
   gap: 4px;
   flex-wrap: wrap;
+}
+.titulo{
+  color: #0d5775;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.caracteristicas{
+  background-color: #f0f0f0;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.caracteristicas span{
+  font-weight: bold;
+  color: #333;
+  display: inline-block;
+  margin-bottom: 5px;}
+
+ul{
+  list-style-type: none;
+  padding: 0;
+}
+
+.tarjeta{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  background-color: #6679d4;
+  width: 300px;
+  height: 500px;
+  overflow: hidden;
+  justify-content: start;
+  border-radius: 15px;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.tarjeta img{
+  max-width: 100%;
+  min-height: 200px;
+  overflow: hidden;
+  object-fit: cover;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.tarjeta:hover{
+  background-color: #9ebfd6;
+  transform: scale(1.025);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  
+}
+
+.productos{
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: minmax(100px, auto);
+  gap: 10px;
 }
